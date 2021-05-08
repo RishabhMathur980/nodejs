@@ -1,0 +1,32 @@
+doctype html
+html
+    head
+        block head
+            
+            meta(charset='UTF-8')
+            meta(name='viewport' content='width=device-width, initial-scale=1.0')
+            link(rel='stylesheet' href='/css/style.css')
+            link(rel='shortcut icon' href='/img/favicon.png')
+            link(href='https://fonts.googleapis.com/css?family=Lato:300,300i,700' rel='stylesheet')
+            title Natour | #{title}
+    
+    body
+        include _header      
+        block content
+            h1 this is a placeholder heading
+        include _footer
+
+        script(src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0-0/axios.min.js')
+        script(src='/js/mapbox.js')
+        script(src='/js/login2.js')
+        script(src='/js/logout.js')
+        script(src='/js/update.js')
+        script(src='/js/signup.js')
+        script(src='/js/stripe.js')
+        script(src='/js/forgetPassword.js')
+        script(src='/js/resetPassword.js')
+
+
+
+
+//- modifier

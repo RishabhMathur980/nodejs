@@ -1,0 +1,14 @@
+const express = require('express');
+const Router = express.Router();
+const viewHandler = require('./../controllers/viewController');
+const authorization = require('./../controllers/authentication');
+Router.get('/me', authorization.protect, viewHandler.getMe);
+Router.get('/', authorization.getLogedIn, viewHandler.getOverview);
+Router.get('/tour/:slug', authorization.getLogedIn, viewHandler.getTour);
+Router.get('/login', authorization.getLogedIn, viewHandler.getLogin);
+// Router.post('/save-user-data', authorization.protect, viewHandler.updateData);
+Router.get('/myreview', authorization.protect, viewHandler.myReview);
+Router.get('/signup', viewHandler.signin);
+Router.get('/forgetpassword??', viewHandler.forgetPassword);
+Router.get('/resetpassword/:token', viewHandler.resetPassword);
+module.exports = Router;
